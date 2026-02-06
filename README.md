@@ -35,24 +35,9 @@
 - Python 3.8+
 - uv (for environment management)
 
-### Installation
+### Installation through blueprint-init
 
-1. Clone this repository:
-   ```bash
-   git clone <repository-url>
-   cd {{project_name}}
-   ```
-
-2. Create and activate virtual environment:
-   ```bash
-   uv venv
-   source .venv/bin/activate
-   ```
-
-3. Install dependencies:
-   ```bash
-   uv pip install -e .
-   ```
+[Add installation instructions here]
 
 ### Usage
 
