@@ -35,13 +35,33 @@
 - Python 3.8+
 - uv (for environment management)
 
-### Installation through blueprint-init
+### Installation
 
 [Add installation instructions here]
 
 ### Usage
 
 [Add usage instructions here]
+
+## Development
+
+### Linting and formatting
+This project uses [ruff](https://docs.astral.sh/ruff/) for linting and formatting. 
+
+```bash
+uv run ruff check
+```
+
+```bash
+uv run ruff format
+```
+
+### Git conventions
+TO maintain a clean and navigable history, please follow these conventions:
+
+- Branching: Use descriptive prefixes. E.g. `feature/`, `fix`, `bug/`, `refactor/`.
+- Commits: Use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/). E.g. `fix: handle empty csv`, `feat: add data loader`. 
+- Pull requests: Ensure all code is formatted and linted before submission. 
 
 ## Data
 
