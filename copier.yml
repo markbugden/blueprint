@@ -57,7 +57,7 @@ pytorch_support:
 # === Data Science ===
 data_science_packages:
   type: bool
-  help: Include data science packages (pandas, numpy, matplotlib, seaborn)?
+  help: Include data science packages (pandas, numpy, matplotlib, seaborn, sklearn)?
   default: yes
 
 # === Web App ===
