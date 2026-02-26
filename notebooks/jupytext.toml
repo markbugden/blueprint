@@ -1,0 +1,2 @@
+# Always pair Markdown files with Notebook files
+formats = "ipynb,md"
