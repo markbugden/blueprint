@@ -15,7 +15,7 @@ Projects support Python 3.10 through 3.14. uv will automatically download and in
 Create a new project:
 
 ```bash
-copier copy gh:markbugden/blueprint my-project-name
+copier copy gh:markbugden/blueprint my-project-name --trust
 ```
 
 The template will prompt you to customize:
