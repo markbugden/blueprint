@@ -29,7 +29,8 @@ The template will prompt you to customize:
 ## Project Structure
 
 Generated projects include:
-- Standard data science layout (data/, notebooks/, reports/, scripts/, src/)
+- Standard data science layout (data/, models/, notebooks/, reports/, scripts/, src/)
+- Optional app/ directory for Gradio web applications
 - Git repository with initial commit
 - Virtual environment with pinned Python version
 - uv.lock for reproducible dependencies

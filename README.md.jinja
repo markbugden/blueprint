@@ -21,7 +21,11 @@
 
 ```
 .
+{%- if gradio_app %}
+├── app/            # Gradio web application
+{%- endif %}
 ├── data/           # Data files (raw, processed, external)
+├── models/         # Trained models and model artifacts
 ├── notebooks/      # Jupyter notebooks for exploration and analysis
 ├── reports/        # Generated reports, figures, and documents
 ├── scripts/        # Standalone scripts for specific tasks
@@ -64,7 +68,7 @@
 #### Running the Gradio App
 
 ```bash
-uv run python app.py
+uv run python app/app.py
 ```
 
 Then open your browser to `http://localhost:7860`
