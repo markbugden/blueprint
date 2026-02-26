@@ -8,19 +8,20 @@ description = "{{ project_name }} project"
 requires-python = "=={{ python_version }}.*"
 dependencies = [
 {%- if data_science_packages %}
-    "pandas>=2.0.0",
-    "numpy>=1.24.0",
-    "matplotlib>=3.7.0",
-    "seaborn>=0.12.0",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "scikit-learn",
 {%- endif %}
 {%- if pytorch_support == "cpu" %}
-    "torch>=2.0.0",
+    "torch",
 {%- elif pytorch_support == "gpu" %}
-    "torch>=2.0.0",
-    "torchvision>=0.15.0",
+    "torch",
+    "torchvision",
 {%- endif %}
 {%- if gradio_app %}
-    "gradio>=4.0.0",
+    "gradio",
 {%- endif %}
 ]
 
@@ -46,15 +47,15 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
 {%- if linter == "ruff" %}
-    "ruff>=0.3.0",
+    "ruff",
 {%- endif %}
 {%- if dev_tools %}
-    "tqdm>=4.66.0",
-    "ipykernel>=6.29.0",
+    "tqdm",
+    "ipykernel",
     "jupytext",
 {%- endif %}
-    "pytest>=7.0.0",
-    "pytest-cov>=4.0.0",
+    "pytest",
+    "pytest-cov",
 ]
 
 # ============================================================================
