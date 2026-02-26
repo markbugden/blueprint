@@ -8,7 +8,7 @@ A [Copier](https://copier.readthedocs.io/) template for Python data science and 
 - **Copier** - Install with: `pipx install copier` or `uv tool install copier`
 - **git** - For version control
 
-Projects support Python 3.8 through 3.14. uv will automatically download and install your chosen Python version if needed.
+Projects support Python 3.10 through 3.14. uv will automatically download and install your chosen Python version if needed.
 
 ## Usage
 
@@ -19,7 +19,7 @@ copier copy gh:markbugden/blueprint my-project-name
 ```
 
 The template will prompt you to customize:
-- Python version (3.8-3.14)
+- Python version (3.10-3.14)
 - Data science packages (pandas, numpy, matplotlib, seaborn)
 - PyTorch support (CPU/GPU)
 - Gradio app template
