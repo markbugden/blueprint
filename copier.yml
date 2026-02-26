@@ -1,0 +1,100 @@
+# Copier template configuration for blueprint project generator
+
+_min_copier_version: "9.0.0"
+_templates_suffix: .jinja
+_exclude:
+  - _README.md
+  - copier.yml
+  - copier.yaml
+  - .git
+  - .git/**
+_skip_if_exists:
+  - .git/
+  - data/
+  - .venv/
+
+# === Project Basics ===
+project_name:
+  type: str
+  help: Project name (use letters, numbers, or hyphens)
+  validator: "{% if not project_name or not project_name.strip() %}Project name cannot be empty{% endif %}"
+
+package_name:
+  type: str
+  help: Python package name (use underscores, must be a valid Python identifier)
+  default: "{{ project_name.lower().replace('-', '_').replace(' ', '_') }}"
+
+python_version:
+  type: str
+  help: Minimum Python version
+  default: "3.10"
+  choices:
+    - "3.8"
+    - "3.9"
+    - "3.10"
+    - "3.11"
+    - "3.12"
+    - "3.13"
+    - "3.14"
+
+# === Code Quality ===
+linter:
+  type: str
+  help: Which linter/formatter?
+  default: ruff
+  choices:
+    - ruff
+    - none
+
+# === Deep Learning ===
+pytorch_support:
+  type: str
+  help: Include PyTorch?
+  default: none
+  choices:
+    - none
+    - cpu
+    - gpu
+
+# === Data Science ===
+data_science_packages:
+  type: bool
+  help: Include data science packages (pandas, numpy, matplotlib, seaborn)?
+  default: yes
+
+# === Web App ===
+gradio_app:
+  type: bool
+  help: Include Gradio app template?
+  default: no
+
+# === Dev Tools ===
+dev_tools:
+  type: bool
+  help: Include dev tools (tqdm for progress bars, ipykernel for Jupyter)?
+  default: yes
+
+# === Author Info (Optional) ===
+author_name:
+  type: str
+  help: Author name (leave empty to skip)
+  default: ""
+
+author_email:
+  type: str
+  help: Author email (leave empty to skip)
+  default: ""
+
+# === Post-generation tasks ===
+_tasks:
+  # Git initialization
+  - "git init"
+  - "git branch -M main"
+  
+  # Python environment setup
+  - "uv python install {{ python_version }}"
+  - "uv sync"
+  
+  # Initial git commit
+  - "git add ."
+  - 'git commit -m "Initial commit from blueprint template"'

@@ -1,0 +1,131 @@
+# {{ project_name }}
+
+## Motivation and Goals
+
+[Describe the motivation behind this project and what goals it aims to achieve]
+
+## Table of Contents
+
+- [Motivation and Goals](#motivation-and-goals)
+- [Links](#links)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [Data](#data)
+
+## Links
+
+- [Related Resource 1](#)
+- [Related Resource 2](#)
+
+## Repository Structure
+
+```
+.
+├── data/           # Data files (raw, processed, external)
+├── notebooks/      # Jupyter notebooks for exploration and analysis
+├── reports/        # Generated reports, figures, and documents
+├── scripts/        # Standalone scripts for specific tasks
+└── src/            # Source code for the project
+    └── {{ package_name }}/
+```
+
+## Getting Started
+
+### Prerequisites
+
+- uv (for environment management and Python installation)
+
+**Note**: This project uses Python {{ python_version }}. uv will automatically download and install this Python version if it's not already available on your system.
+
+### Installation
+
+1. Clone this repository:
+   ```bash
+   git clone <repository-url>
+   cd {{ project_name }}
+   ```
+
+2. Install dependencies:
+   ```bash
+   uv sync
+   ```
+   
+   This automatically:
+   - Installs Python {{ python_version }} if needed
+   - Creates a virtual environment with that Python version
+   - Generates a lockfile (uv.lock)
+   - Installs all project dependencies
+
+### Usage
+
+[Add usage instructions here]
+
+{% if gradio_app %}
+#### Running the Gradio App
+
+```bash
+uv run python app.py
+```
+
+Then open your browser to `http://localhost:7860`
+{% endif %}
+
+{% if dev_tools %}
+#### Jupyter Notebook
+
+The project includes ipykernel for Jupyter notebook integration:
+
+```bash
+uv run jupyter notebook
+```
+{% endif %}
+
+{% if linter == "ruff" %}
+#### Code Quality
+
+This project uses Ruff for linting and formatting:
+
+```bash
+# Check code
+uv run ruff check .
+
+# Format code
+uv run ruff format .
+```
+{% endif %}
+
+#### Testing
+
+Run tests with pytest:
+
+```bash
+uv run pytest
+```
+
+## Data
+
+[Describe the data sources, format, and any preprocessing steps]
+
+{% if data_science_packages %}
+## Data Science Stack
+
+This project includes:
+- **pandas**: Data manipulation and analysis
+- **numpy**: Numerical computing
+- **matplotlib**: Plotting and visualization  
+- **seaborn**: Statistical data visualization
+{% endif %}
+
+{% if pytorch_support != "none" %}
+## Machine Learning
+
+This project uses PyTorch ({{ pytorch_support.upper() }} version) for deep learning tasks.
+{% endif %}
+
+## Development
+
+{% if author_name %}
+**Author**: {{ author_name }}{% if author_email %} ({{ author_email }}){% endif %}
+{% endif %}
+
+**License**: [Specify license here]

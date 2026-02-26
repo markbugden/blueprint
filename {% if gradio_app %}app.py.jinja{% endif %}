@@ -1,0 +1,28 @@
+"""
+Gradio app for {{ project_name }}
+"""
+
+import gradio as gr
+
+
+def greet(name: str) -> str:
+    """Simple greeting function"""
+    return f"Hello, {name}! Welcome to {{ project_name }}."
+
+
+# Create Gradio interface
+with gr.Blocks(title="{{ project_name }}") as demo:
+    gr.Markdown("# {{ project_name }}")
+    gr.Markdown("This is a template Gradio app. Customize it for your needs!")
+    
+    with gr.Row():
+        name_input = gr.Textbox(label="Enter your name", placeholder="Your name here...")
+        greet_button = gr.Button("Greet")
+    
+    output = gr.Textbox(label="Greeting")
+    
+    greet_button.click(fn=greet, inputs=name_input, outputs=output)
+
+
+if __name__ == "__main__":
+    demo.launch()
