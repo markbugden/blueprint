@@ -24,7 +24,7 @@ The template will prompt you to customize:
 - PyTorch support (CPU/GPU)
 - Gradio app template
 - Linter (Ruff)
-- Dev tools (tqdm, ipykernel for Jupyter)
+- Dev tools (tqdm, ipykernel for Jupyter, Jupytext for notebooks)
 
 ## Project Structure
 

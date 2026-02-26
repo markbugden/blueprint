@@ -69,7 +69,7 @@ gradio_app:
 # === Dev Tools ===
 dev_tools:
   type: bool
-  help: Include dev tools (tqdm for progress bars, ipykernel for Jupyter)?
+  help: Include dev tools (tqdm for progress bars, ipykernel for Jupyter, Jupytext for notebook saving)?
   default: yes
 
 # === Author Info (Optional) ===
